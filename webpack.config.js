@@ -1,4 +1,35 @@
+const path = require('path')
+
+const CopyPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const PermissionsOutputPlugin = require('webpack-permissions-plugin')
+const outputFolder = 'build'
+const shellScript = 'run-node.sh'
+
 module.exports = () => ({
+  plugins: [
+    new CleanWebpackPlugin({ verbose: true }),
+    new CopyPlugin([
+      { from: 'src/main.js', to: '' },
+      { from: 'src/' + shellScript, to: '' },
+      { from: 'src/assets', to: '' }
+    ]),
+    new PermissionsOutputPlugin({
+      buildFiles: [
+        {
+          path: path.resolve(__dirname, outputFolder, shellScript),
+          fileMode: '755'
+        }
+      ]
+    })
+  ],
+  entry: './src/timeBetween.ts',
+  output: {
+    path: path.resolve(__dirname, outputFolder),
+    libraryTarget: 'commonjs2',
+    filename: 'timeBetween.js'
+  },
+  devtool: 'source-map',
   module: {
     rules: [
       {
