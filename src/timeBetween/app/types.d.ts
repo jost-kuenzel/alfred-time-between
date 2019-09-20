@@ -1,5 +1,5 @@
 interface AlfredResult {
-  items: AfredResultItem[]
+  items: AlfredResultItem[]
 }
 
 interface AlfredResultItem {
@@ -13,6 +13,5 @@ interface AlfredResultItem {
 }
 
 interface AlfredResultItemIcon {
-  type: string
   path: string
 }
