@@ -1,11 +1,11 @@
-const defaultResult: AlfredResult = {
-  items: [
-    {
-      title: 'Time Between',
-      subtitle: 'Please provide two time like HH:MM-HH:MM',
-      icon: { path: 'icon.png' }
-    }
-  ]
-}
+import { pipe } from 'ramda'
+import sanitize from './sanitize'
+import toTimeframes from './toTimeframes'
+import toAlfredResults from './toAlfredResults'
 
-export default (s: string): AlfredResult => defaultResult
+export default (alfredInput: string): AlfredResult =>
+  pipe(
+    sanitize,
+    toTimeframes,
+    toAlfredResults
+  )(alfredInput)
