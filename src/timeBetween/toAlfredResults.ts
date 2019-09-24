@@ -1,5 +1,5 @@
 import { pipe, map, isNil, ifElse, isEmpty, mapAccum } from 'ramda'
-import convertMinToHourMin from '../domain/convertMinToHourMin'
+import convertMinToHourMin from './convertMinToHourMin'
 
 const rejectUndefinedTimeframes = (timeframes: Timeframe[]): Timeframe[] =>
   timeframes.filter((tf: Timeframe): boolean => !isNil(tf.duration))

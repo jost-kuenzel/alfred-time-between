@@ -1,6 +1,6 @@
 import { pipe, split, nth, defaultTo, map } from 'ramda'
-import getDateFromHour from '../domain/getDateFromHour'
-import getDiffMinutes from '../domain/getDiffMinutes'
+import getDateFromHour from './getDateFromHour'
+import getDiffMinutes from './getDiffMinutes'
 
 const convertToTimeframe = (s: string): Timeframe => {
   const matches = defaultTo([], s.match(/(\d+:\d+)-(\d+:\d+)/))

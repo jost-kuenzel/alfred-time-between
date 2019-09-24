@@ -1,3 +1,3 @@
-import app from './timeBetween/app'
+import lib from './timeBetween/'
 
-export const timeBetween = (s: string): string => JSON.stringify(app(s))
+export const timeBetween = (s: string): string => JSON.stringify(lib(s))
