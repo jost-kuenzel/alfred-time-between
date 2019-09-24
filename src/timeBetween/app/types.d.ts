@@ -24,5 +24,5 @@ interface AlfredResultItemText {
 interface Timeframe {
   start: string | undefined
   end: string | undefined
-  duration: string | undefined
+  duration: number | undefined
 }

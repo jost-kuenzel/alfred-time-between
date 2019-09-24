@@ -1,7 +1,6 @@
 import { pipe, split, nth, defaultTo, map } from 'ramda'
 import getDateFromHour from '../domain/getDateFromHour'
 import getDiffMinutes from '../domain/getDiffMinutes'
-import convertMinToHours from '../domain/convertMinToHours'
 
 const convertToTimeframe = (s: string): Timeframe => {
   const matches = defaultTo([], s.match(/(\d+:\d+)-(\d+:\d+)/))
@@ -22,10 +21,7 @@ const calculateDuration = (tf: Timeframe): Timeframe => {
 
   const a = getDateFromHour(tf.start)
   const b = getDateFromHour(tf.end)
-  const min = getDiffMinutes(a, b)
-  const h = Math.floor(min / 60)
-  const mm = (min % 60).toString().padStart(2, '0')
-  const duration = `${h}:${mm}`
+  const duration = getDiffMinutes(a, b)
 
   return {
     start: tf.start,

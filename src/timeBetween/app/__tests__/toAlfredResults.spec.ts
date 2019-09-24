@@ -1,12 +1,12 @@
 import toAlfredResults from '../toAlfredResults'
 
-describe('toTimeframes', () => {
-  it('convert to timeframe interface', () => {
+describe('toAlfredResults', () => {
+  it('convert to alfred result interface', () => {
     const timeframes = [
       {
         start: '08:00',
         end: '12:00',
-        duration: '4:00'
+        duration: 4 * 60
       }
     ]
 
