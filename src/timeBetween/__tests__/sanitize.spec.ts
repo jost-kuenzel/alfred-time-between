@@ -26,7 +26,8 @@ describe('sanitize', () => {
     expect(sanitize(s)).toBe('08:00-10:00 10:00-11:45')
   })
   it('linearizes multilines', () => {
-    const s = ' 08 :45 -12:  00\n  lunch with qa\n 10:00  -   12:00'
-    expect(sanitize(s)).toBe('08:45-12:00 10:00-12:00')
+    const s =
+      ' 08 :45 -12:  00\n  lunch with qa\n 10:00  -   12:00\n14:00-15:00'
+    expect(sanitize(s)).toBe('08:45-12:00 10:00-12:00 14:00-15:00')
   })
 })
