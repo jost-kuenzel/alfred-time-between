@@ -2,7 +2,7 @@
 
 An Alfred workflow to calculate hours elapsed between one or more timeframes.
 
-![Alfred Logo](src/assets/icon.png)
+![Alfred Logo](src/assets/icon-240.png)
 
 _(thank you https://pixabay.com/vectors/time-time-of-clock-time-indicating-1606153/)_
 
