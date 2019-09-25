@@ -188,7 +188,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Please provide two time like HH:MM-HH:MM</string>
+				<string>Enter one or more time spans like HH:MM-HH:MM</string>
 				<key>title</key>
 				<string>Time Between</string>
 				<key>type</key>
@@ -235,7 +235,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Please provide two time like HH:MM-HH:MM</string>
+				<string>Enter one or more time spans like HH:MM-HH:MM</string>
 				<key>title</key>
 				<string>Time Between</string>
 				<key>type</key>
