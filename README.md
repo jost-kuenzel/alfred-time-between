@@ -1,3 +1,5 @@
+![Node CI Badge](https://github.com/jost-kuenzel/alfred-time-between/workflows/Node%20CI/badge.svg)
+
 # time-between Alfred workflow
 
 An Alfred workflow to calculate hours elapsed between one or more timeframes.
