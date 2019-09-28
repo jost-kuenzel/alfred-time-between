@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode development",
     "test": "jest --coverage",
-    "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
+    "package": "node etc/package-workflow.js"
   },
   "author": "",
   "license": "ISC",
@@ -35,8 +36,10 @@
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "jest-config": "^23.6.0",
+    "log-symbols": "^3.0.0",
     "prettier": "^1.16.1",
     "ramda": "^0.26.1",
+    "ramda-fantasy": "^0.8.0",
     "ts-jest": "^24.1.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
