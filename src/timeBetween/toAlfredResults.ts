@@ -16,7 +16,7 @@ const buildAlfredResultItem = (
   duration: number,
   subtitle: string
 ): AlfredResultItem => ({
-  title: `${convertMinToHourMin(duration)} Stunden`,
+  title: `${convertMinToHourMin(duration)}`,
   subtitle,
   icon: {
     path: 'icon.png'
