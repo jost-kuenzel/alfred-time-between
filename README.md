@@ -4,7 +4,7 @@
 
 An Alfred workflow to calculate hours elapsed between one or more timeframes.
 
-![Alfred Logo](src/assets/icon-240.png)
+![Alfred Logo](docs/icon-240.png)
 
 _(thank you https://pixabay.com/vectors/time-time-of-clock-time-indicating-1606153/)_
 
@@ -16,9 +16,13 @@ A current Node.js version and Yarn are required to build and run this Alfred wor
 
 Enter `tb` and a series of timeframes e.g. `09:00-12:00 13:30-17:00`
 
+![tb command screen recording](docs/tb.gif)
+
 or
 
 Copy text that includes a bunch of timeframes into your clipboard and enter `tbc`.
+
+![tbc command screen recording](docs/tbc.gif)
 
 ## Build the workflow
 
