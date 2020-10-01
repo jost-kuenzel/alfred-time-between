@@ -6,8 +6,8 @@ describe('toAlfredResults', () => {
       {
         start: '08:00',
         end: '12:00',
-        duration: 4 * 60
-      }
+        duration: 4 * 60,
+      },
     ]
 
     const res = toAlfredResults(timeframes)

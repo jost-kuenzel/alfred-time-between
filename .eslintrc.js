@@ -3,21 +3,21 @@ module.exports = {
   extends: ['plugin:prettier/recommended'],
   env: {
     jest: true,
-    browser: true
+    browser: true,
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   settings: {
     'import/resolver': {
       node: {
         paths: ['src'],
-        extensions: ['.js', '.ts']
-      }
-    }
+        extensions: ['.js', '.ts'],
+      },
+    },
   },
   rules: {
-    'no-undef': 'off'
-  }
+    'no-undef': 'off',
+  },
 }

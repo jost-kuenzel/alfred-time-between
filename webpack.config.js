@@ -14,22 +14,22 @@ module.exports = () => ({
     new CopyPlugin([
       { from: 'src/main.js', to: '' },
       { from: 'src/' + shellScript, to: '' },
-      { from: 'src/assets', to: '' }
+      { from: 'src/assets', to: '' },
     ]),
     new PermissionsOutputPlugin({
       buildFiles: [
         {
           path: path.resolve(__dirname, outputFolder, shellScript),
-          fileMode: '755'
-        }
-      ]
-    })
+          fileMode: '755',
+        },
+      ],
+    }),
   ],
   entry: './src/timeBetween.ts',
   output: {
     path: path.resolve(__dirname, outputFolder),
     libraryTarget: 'commonjs2',
-    filename: 'timeBetween.js'
+    filename: 'timeBetween.js',
   },
   devtool: 'source-map',
   module: {
@@ -39,19 +39,19 @@ module.exports = () => ({
         exclude: [/node_modules/, '/src/**/__tests__/**'],
         use: [
           {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
           },
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true
-            }
-          }
-        ]
-      }
-    ]
+              transpileOnly: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  }
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
 })

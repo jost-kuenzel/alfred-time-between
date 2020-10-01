@@ -7,13 +7,13 @@ describe('toTimeframes', () => {
       {
         start: '08:00',
         end: '12:00',
-        duration: 4 * 60
+        duration: 4 * 60,
       },
       {
         start: '13:00',
         end: '17:30',
-        duration: 4.5 * 60
-      }
+        duration: 4.5 * 60,
+      },
     ])
   })
 })

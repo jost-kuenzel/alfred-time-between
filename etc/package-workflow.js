@@ -33,14 +33,14 @@ const checkBuildDir = () =>
  * Maybe creates the dist dir
  * @param {Either} either
  */
-const maybeMakeDistDir = either =>
+const maybeMakeDistDir = (either) =>
   either.map(() => fs.mkdirSync(distDir, { recursive: true }))
 
 /**
  * Gives feedback if dist dir was created
  */
 const maybeMakeDistDirFeedback = tap(
-  either =>
+  (either) =>
     Either.isRight(either) &&
     out(`${logSymbols.success} Made sure dist directory exists`)
 )
@@ -48,21 +48,26 @@ const maybeMakeDistDirFeedback = tap(
  * Maybe removes previously created zip file
  * @param {Either} either
  */
-const maybeUnlinkZip = either =>
-  either.map(tryCatch(() => fs.unlinkSync(archivePath), () => {}))
+const maybeUnlinkZip = (either) =>
+  either.map(
+    tryCatch(
+      () => fs.unlinkSync(archivePath),
+      () => {}
+    )
+  )
 
 /**
  * Gives feedback if zip was removed
  */
 const maybeUnlinkZipFeedback = tap(
-  either => Either.isRight(either) && out(`${logSymbols.success} Cleanup`)
+  (either) => Either.isRight(either) && out(`${logSymbols.success} Cleanup`)
 )
 
 /**
  * Maybe creates a zip file from files in build dir
  * @param {Either} either
  */
-const maybeCreateZip = either =>
+const maybeCreateZip = (either) =>
   either.chain(() => {
     const { status, error } = spawn('zip', ['-jr', archivePath, buildDir])
     return status !== 0
@@ -74,7 +79,7 @@ const maybeCreateZip = either =>
  * Gives feedback if zip was created
  */
 const maybeCreateZipFeedback = tap(
-  either =>
+  (either) =>
     Either.isRight(either) &&
     out(`${logSymbols.success} Created ${archiveName}`)
 )
@@ -82,9 +87,9 @@ const maybeCreateZipFeedback = tap(
 /**
  * Gives finalfeedback
  */
-const finalFeedback = tap(either =>
+const finalFeedback = tap((either) =>
   either.either(
-    err => out(`${logSymbols.error} Failed: ${err}`),
+    (err) => out(`${logSymbols.error} Failed: ${err}`),
     () => out(`${logSymbols.success} Finished without errors`)
   )
 )

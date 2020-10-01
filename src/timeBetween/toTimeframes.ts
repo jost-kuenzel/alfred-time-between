@@ -10,7 +10,7 @@ const convertToTimeframe = (s: string): Timeframe => {
   return {
     start: getStart(matches),
     end: getEnd(matches),
-    duration: undefined
+    duration: undefined,
   }
 }
 
@@ -26,7 +26,7 @@ const calculateDuration = (tf: Timeframe): Timeframe => {
   return {
     start: tf.start,
     end: tf.end,
-    duration
+    duration,
   }
 }
 

@@ -5,9 +5,11 @@ const rejectUndefinedTimeframes = (timeframes: Timeframe[]): Timeframe[] =>
   timeframes.filter((tf: Timeframe): boolean => !isNil(tf.duration))
 
 const buildAlfredResultItems = (timeframes: Timeframe[]): AlfredResultItem[] =>
-  ifElse(isEmpty, () => [defaultResultItem], map(toAlfredResultItem))(
-    timeframes
-  )
+  ifElse(
+    isEmpty,
+    () => [defaultResultItem],
+    map(toAlfredResultItem)
+  )(timeframes)
 
 const toAlfredResultItem = (tf: Timeframe): AlfredResultItem =>
   buildAlfredResultItem(tf.duration!, `${tf.start!}-${tf.end!}`)
@@ -19,19 +21,19 @@ const buildAlfredResultItem = (
   title: `${convertMinToHourMin(duration)}`,
   subtitle,
   icon: {
-    path: 'icon.png'
+    path: 'icon.png',
   },
   arg: `${convertMinToHourMin(duration)}`,
   text: {
     copy: `${convertMinToHourMin(duration)}`,
-    largetype: `${convertMinToHourMin(duration)}`
-  }
+    largetype: `${convertMinToHourMin(duration)}`,
+  },
 })
 
 const defaultResultItem: AlfredResultItem = {
   title: 'Time Between',
   subtitle: 'Enter one or more time spans like HH:MM-HH:MM',
-  icon: { path: 'icon.png' }
+  icon: { path: 'icon.png' },
 }
 
 const calcTotalDuration = (timeframes: Timeframe[]): number => {
@@ -47,7 +49,7 @@ const calcTotalDuration = (timeframes: Timeframe[]): number => {
 }
 
 const buildAlfredResult = (items: AlfredResultItem[]): AlfredResult => ({
-  items
+  items,
 })
 
 const ifMultipleTimeframesAddTotalResultItem = (timeframes: Timeframe[]) => (
@@ -57,7 +59,7 @@ const ifMultipleTimeframesAddTotalResultItem = (timeframes: Timeframe[]) => (
     (timeframes: Timeframe[]) => timeframes.length > 1,
     () => [
       buildAlfredResultItem(calcTotalDuration(timeframes), 'Total'),
-      ...items
+      ...items,
     ],
     () => items
   )(items)
