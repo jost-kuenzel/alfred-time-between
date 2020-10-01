@@ -11,11 +11,13 @@ module.exports = () => ({
   plugins: [
     new WebpackProgressBar({ clear: true }),
     new CleanWebpackPlugin({ verbose: false }),
-    new CopyPlugin([
-      { from: 'src/main.js', to: '' },
-      { from: 'src/' + shellScript, to: '' },
-      { from: 'src/assets', to: '' },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/main.js', to: '' },
+        { from: 'src/' + shellScript, to: '' },
+        { from: 'src/assets', to: '' },
+      ],
+    }),
     new PermissionsOutputPlugin({
       buildFiles: [
         {
