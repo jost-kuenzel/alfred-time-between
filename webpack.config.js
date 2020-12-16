@@ -1,6 +1,6 @@
 const path = require('path')
 
-const WebpackProgressBar = require('webpack-progress-bar')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const PermissionsOutputPlugin = require('webpack-permissions-plugin')
@@ -9,7 +9,7 @@ const shellScript = 'run-node.sh'
 
 module.exports = () => ({
   plugins: [
-    new WebpackProgressBar({ clear: true }),
+    new ProgressBarPlugin(),
     new CleanWebpackPlugin({ verbose: false }),
     new CopyPlugin({
       patterns: [
